@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 
 from .models import Base
 
-engine = create_engine("sqlite:////data/site.db")
+engine = create_engine("sqlite:///./site.db")
 SessionLocal = sessionmaker(bind=engine)
 
 
