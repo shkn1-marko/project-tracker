@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Marko Palameta</title>
+    <link rel="icon" href="/static/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+            max-width: 1060px;
+            margin: 72px auto 60px;
+            padding: 0 24px;
+            background: #101214;
+            color: #e6e6e6;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            border: 1px solid #2c3035;
+            border-radius: 8px;
+            padding: 20px 28px;
+            margin-bottom: 36px;
+            background: #181a1e;
+        }
+
+        .header img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .id-block {
+            display: flex;
+            flex-direction: column;
+            margin-right: 30px;
+        }
+
+        .id-block strong {
+            font-size: 19px;
+            color: #f0f0f0;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+
+        .id-block .sub {
+            font-size: 13px;
+            color: #d28a3a;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            margin-right: 28px;
+            border-left: 2px solid #30343a;
+            padding-left: 20px;
+        }
+
+        .field .label {
+            font-size: 11px;
+            color: #8b9199;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .field .value {
+            font-size: 15px;
+            color: #5ba7e8;
+            font-weight: 600;
+        }
+
+        .field:last-child {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .about {
+            margin-bottom: 36px;
+            color: #b8bcc2;
+            font-size: 14px;
+            line-height: 1.7;
+            padding: 18px 22px;
+            background: #181a1e;
+            border-radius: 8px;
+            border: 1px solid #2c3035;
+        }
+
+        .about .tag {
+            color: #e06a9b;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .section-label {
+            font-size: 14px;
+            color: #ffffff;
+            margin-bottom: 12px;
+            margin-left: 6px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            background: #1769aa;
+            padding: 5px 13px;
+            border-radius: 5px;
+        }
+
+        .section-label.spaced {
+            margin-top: 40px;
+        }
+
+        .entry {
+            border: 1px solid #2c3035;
+            border-radius: 8px;
+            padding: 14px 20px;
+            margin-bottom: 9px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #181a1e;
+            font-size: 16px;
+            font-weight: 500;
+            color: #e6e6e6;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+            min-width: 0;
+        }
+
+        .entry span:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .entry:hover {
+            border-color: #3d91d0;
+            box-shadow: 0 4px 20px rgba(0, 95, 184, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 64px;
+        }
+
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-left: 8px;
+        }
+
+        .red {
+            background: #ff453a;
+        }
+
+        .yellow {
+            background: #ffc107;
+        }
+
+        .green {
+            background: #30d158;
+        }
+
+        @media (max-width: 760px) {
+            body {
+                margin-top: 32px;
+            }
+
+            .header {
+                flex-wrap: wrap;
+                gap: 18px;
+            }
+
+            .field {
+                margin-right: 0;
+            }
+
+            .field:last-child {
+                margin-left: 0;
+            }
+
+            .columns {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="/static/profile.png" alt="Fotografija">
+        <div class="id-block">
+            <strong>Marko Palameta</strong>
+            <span class="sub">Bacc. Ing. CS (FER)</span>
+        </div>
+        <div class="field">
+            <span class="label">Lokacija</span>
+            <span class="value">Zagreb, HR</span>
+        </div>
+        <div class="field">
+            <span class="label">E-pošta</span>
+            <span class="value">shkn1.marko@gmail.com</span>
+        </div>
+        <div class="field">
+            <span class="label">Mobitel</span>
+            <span class="value">+385 95 804 3168</span>
+        </div>
+    </div>
+
+    <p class="about">
+        <span class="tag">O meni :</span><br>
+        Ja sam Marko, prvostupnik inženjer računalne znanosti (Bacc. Ing. CS).
+        Ovo je stranica na kojoj pratim svoje projekte. Ovdje možete vidjeti
+        na čemu trenutno radim, moje dugoročne ciljeve, moje završene projekte
+        i projekte na kojima još uvijek radim.
+    </p>
+
+    <div class="section-label">Trenutno</div>
+    {% for entry in right_now %}
+    <div class="entry">
+        <span>{{ entry.title }}</span>
+    </div>
+    {% endfor %}
+
+    <div class="columns">
+
+        <div>
+            <div class="section-label spaced">Ciljevi</div>
+            {% for entry in goals %}
+            <div class="entry">
+                <span>{{ entry.title }}</span>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div>
+            <div class="section-label spaced">Projekti</div>
+            {% for entry in projects %}
+            <div class="entry">
+                <span>{{ entry.title }}</span>
+                <span class="dot {{ entry.status.value if entry.status else '' }}"></span>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</body>
+</html>
