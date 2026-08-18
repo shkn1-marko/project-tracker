@@ -1,3 +1,4 @@
+{% from "macros.html" import external_link_icon %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 
         body {
             font-family: 'IBM Plex Sans', -apple-system, sans-serif;
-            max-width: 1060px;
+            max-width: 1120px;
             margin: 72px auto 60px;
             padding: 0 24px;
             background: #101214;
@@ -82,9 +83,24 @@
             font-weight: 600;
         }
 
+        .field a {
+            color: #5ba7e8;
+            text-decoration: none;
+        }
+
+        .field a:hover {
+            text-decoration: underline;
+        }
+
         .field:last-child {
             margin-left: auto;
             margin-right: 0;
+        }
+
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .about {
@@ -220,6 +236,15 @@
         <div class="field">
             <span class="label">Mobitel</span>
             <span class="value">+385 95 804 3168</span>
+        </div>
+        <div class="field">
+            <span class="label">GitHub</span>
+            <span class="value">
+                <a href="https://github.com/shkn1-marko" class="external-link" target="_blank" rel="noopener">
+                    shkn1-marko
+                    {{ external_link_icon() }}
+                </a>
+            </span>
         </div>
     </div>
 
