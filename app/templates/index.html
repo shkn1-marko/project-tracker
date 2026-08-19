@@ -1,4 +1,4 @@
-{% from "macros.html" import external_link_icon %}
+{% from "macros.html" import external_link_icon, entry_card %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -259,9 +259,7 @@
 
     <div class="section-label">Trenutno</div>
     {% for entry in right_now %}
-    <div class="entry">
-        <span>{{ entry.title }}</span>
-    </div>
+        {{ entry_card(entry) }}
     {% endfor %}
 
     <div class="columns">
@@ -269,19 +267,14 @@
         <div>
             <div class="section-label spaced">Ciljevi</div>
             {% for entry in goals %}
-            <div class="entry">
-                <span>{{ entry.title }}</span>
-            </div>
+                {{ entry_card(entry) }}
             {% endfor %}
         </div>
 
         <div>
             <div class="section-label spaced">Projekti</div>
             {% for entry in projects %}
-            <div class="entry">
-                <span>{{ entry.title }}</span>
-                <span class="dot {{ entry.status.value if entry.status else '' }}"></span>
-            </div>
+                {{ entry_card(entry, show_status=True) }}
             {% endfor %}
         </div>
 
