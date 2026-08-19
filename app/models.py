@@ -28,3 +28,8 @@ class Entry(Base):
     status = Column(Enum(Status), nullable=True)
     pinned = Column(Boolean, default=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    description = Column(String, nullable=True)
+    github_url = Column(String, nullable=True)
+    youtube_url = Column(String, nullable=True)
+    webpage_url = Column(String, nullable=True)
