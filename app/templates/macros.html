@@ -12,7 +12,10 @@
      data-github="{{ entry.github_url or '' }}"
      data-youtube="{{ entry.youtube_url or '' }}"
      data-webpage="{{ entry.webpage_url or '' }}">
-    <span>{{ entry.title }}</span>
-    {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}
+    <div class="entry-row">
+        <span>{{ entry.title }}</span>
+        {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}
+    </div>
+    <div class="entry-details" hidden></div>
 </div>
 {% endmacro %}
