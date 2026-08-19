@@ -5,3 +5,14 @@
     <line x1="10" y1="14" x2="21" y2="3"></line>
 </svg>
 {% endmacro %}
+
+{% macro entry_card(entry, show_status=False) %}
+<div class="entry"
+     data-description="{{ entry.description or '' }}"
+     data-github="{{ entry.github_url or '' }}"
+     data-youtube="{{ entry.youtube_url or '' }}"
+     data-webpage="{{ entry.webpage_url or '' }}">
+    <span>{{ entry.title }}</span>
+    {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}
+</div>
+{% endmacro %}
