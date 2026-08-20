@@ -25,6 +25,13 @@ class Entry(Base):
     id = Column(Integer, primary_key=True)
     type = Column(Enum(EntryType), nullable=False)
     title = Column(String, nullable=False)
+    description = Column(String, nullable=True)
+
     status = Column(Enum(Status), nullable=True)
     pinned = Column(Boolean, default=False)
+
+    github_url = Column(String, nullable=True)
+    youtube_url = Column(String, nullable=True)
+    webpage_url = Column(String, nullable=True)
+
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

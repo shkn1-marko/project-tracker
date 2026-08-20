@@ -1,10 +1,10 @@
-{% from "macros.html" import external_link_icon %}
+{% from "macros.html" import external_link_icon, entry_card %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Marko Palameta</title>
-    <link rel="icon" href="/static/favicon.png">
+    <link rel="icon" href="/static/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
 
@@ -144,8 +144,7 @@
             padding: 14px 20px;
             margin-bottom: 9px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             background: #181a1e;
             font-size: 16px;
             font-weight: 500;
@@ -165,6 +164,56 @@
             border-color: #3d91d0;
             box-shadow: 0 4px 20px rgba(0, 95, 184, 0.25);
             transform: translateY(-1px);
+        }
+
+        .entry-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .entry-details {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.25s ease;
+            overflow: hidden;
+        }
+
+        .entry-details.open {
+            grid-template-rows: 1fr;
+        }
+
+        .entry-details-inner {
+            min-height: 0;
+            overflow: hidden;
+        }
+
+        .entry-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        .entry-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #5ba7e8;
+            text-decoration: none;
+        }
+
+        .entry-link:not(:first-child) {
+            border-left: 1px solid #30343a;
+            padding-left: 16px;
+        }
+
+        .entry-description {
+            margin: 14px 0 4px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #b8bcc2;
         }
 
         .columns {
@@ -221,7 +270,7 @@
 <body>
 
     <div class="header">
-        <img src="/static/profile.png" alt="Fotografija">
+        <img src="/static/img/profile.png" alt="Fotografija">
         <div class="id-block">
             <strong>Marko Palameta</strong>
             <span class="sub">Bacc. Ing. CS (FER)</span>
@@ -259,9 +308,7 @@
 
     <div class="section-label">Trenutno</div>
     {% for entry in right_now %}
-    <div class="entry">
-        <span>{{ entry.title }}</span>
-    </div>
+        {{ entry_card(entry) }}
     {% endfor %}
 
     <div class="columns">
@@ -269,23 +316,20 @@
         <div>
             <div class="section-label spaced">Ciljevi</div>
             {% for entry in goals %}
-            <div class="entry">
-                <span>{{ entry.title }}</span>
-            </div>
+                {{ entry_card(entry) }}
             {% endfor %}
         </div>
 
         <div>
             <div class="section-label spaced">Projekti</div>
             {% for entry in projects %}
-            <div class="entry">
-                <span>{{ entry.title }}</span>
-                <span class="dot {{ entry.status.value if entry.status else '' }}"></span>
-            </div>
+                {{ entry_card(entry, show_status=True) }}
             {% endfor %}
         </div>
 
     </div>
 
+<template id="external-link-icon-template">{{ external_link_icon() }}</template>
+<script src="/static/js/entries.js"></script>
 </body>
 </html>
