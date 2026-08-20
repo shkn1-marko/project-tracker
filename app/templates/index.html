@@ -144,8 +144,7 @@
             padding: 14px 20px;
             margin-bottom: 9px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
             background: #181a1e;
             font-size: 16px;
             font-weight: 500;
@@ -165,6 +164,28 @@
             border-color: #3d91d0;
             box-shadow: 0 4px 20px rgba(0, 95, 184, 0.25);
             transform: translateY(-1px);
+        }
+
+        .entry-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .entry-details {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.25s ease;
+            overflow: hidden;
+        }
+
+        .entry-details.open {
+            grid-template-rows: 1fr;
+        }
+
+        .entry-details-inner {
+            min-height: 0;
+            overflow: hidden;
         }
 
         .columns {
@@ -280,6 +301,7 @@
 
     </div>
 
+<template id="external-link-icon-template">{{ external_link_icon() }}</template>
 <script src="/static/js/entries.js"></script>
 </body>
 </html>

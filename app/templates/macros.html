@@ -16,6 +16,8 @@
         <span>{{ entry.title }}</span>
         {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}
     </div>
-    <div class="entry-details" hidden></div>
+    <div class="entry-details">
+        <div class="entry-details-inner"></div>
+    </div>
 </div>
 {% endmacro %}
