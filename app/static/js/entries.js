@@ -22,16 +22,24 @@ document.querySelectorAll('.entry').forEach(entry => {
                 ['Web', webpage],
             ];
 
-            links.forEach(([label, url]) => {
-                if (!url) return;
-                const a = document.createElement('a');
-                a.href = url;
-                a.target = '_blank';
-                a.rel = 'noopener';
-                a.className = 'entry-link';
-                a.innerHTML = `${label} ${externalLinkIcon}`;
-                inner.appendChild(a);
-            });
+            const activeLinks = links.filter(([, url]) => url);
+
+            if (activeLinks.length) {
+                const linksWrapper = document.createElement('div');
+                linksWrapper.className = 'entry-links';
+
+                activeLinks.forEach(([label, url]) => {
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                    a.className = 'entry-link';
+                    a.innerHTML = `${label} ${externalLinkIcon}`;
+                    linksWrapper.appendChild(a);
+                });
+
+                inner.appendChild(linksWrapper);
+            }
 
             if (description) {
                 const p = document.createElement('p');

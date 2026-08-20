@@ -188,6 +188,34 @@
             overflow: hidden;
         }
 
+        .entry-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 14px;
+        }
+
+        .entry-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #5ba7e8;
+            text-decoration: none;
+        }
+
+        .entry-link:not(:first-child) {
+            border-left: 1px solid #30343a;
+            padding-left: 16px;
+        }
+
+        .entry-description {
+            margin: 14px 0 4px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #b8bcc2;
+        }
+
         .columns {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
