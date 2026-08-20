@@ -9,7 +9,7 @@ db.add_all(
         Entry(
             type=EntryType.right_now,
             title="Izrađujem web-stranicu koristeći FastAPI",
-            description="Koristim Python, FastAPI, Jinja za izradu stranice. Za posluživanje stranice koristim VPS, Nginx, Systemd",
+            description="Za izradu stranice koristim Python, FastAPI, Jinja. Stranicu poslužujem na domeni marko-palameta.com.hr uz pomoć VPS, Nginx, Systemd.",
             github_url = "https://github.com/shkn1-marko/project-tracker",
         ),
         Entry(type=EntryType.goal,
@@ -23,21 +23,20 @@ db.add_all(
         Entry(
             type=EntryType.project,
             title="Web-stranica za praćenje projekata",
-            description="Originalna ideja ovog projekta je stvaranje jedinstvenog pregleda u moj portfolio, koja na jednom mjestu prikazuje informacije koje inače postoje na više mjesta kao što su GitHub profil, životopis, web-stranice projekta. Cilj koji želim ostvariti je bolje predstavljnje potencijalnim poslodavcima. Dodatno želim obnoviti praksu programiranja u Python-u i savladati izradu manjih web-stranica.",
+            description="Prilikom prijave za poslove suočio sam se sa jedinstvenim problemom. Kako potencijalnom poslodavcu najbolje prestaviti svoj portfolio. Došao sam na ideju da stvorim jedinstveni pogled koji spaja podatke koji se inače nalaze u mom životopisu, na GitHub-u i na web-stranicama mojih projekata. Podatci su podjeljeni u tri kategorije, stvari na kojima upravo radim, dugoročni ciljevi i popis završenih (zeleno) i projekata koji su u izradi (žuto).",
             github_url="https://github.com/shkn1-marko/project-tracker",
-            webpage_url="https://marko-palameta.com.hr",
             status=Status.yellow,
         ),
         Entry(
             type=EntryType.project,
             title="Pokretač video igara",
-            description="U slobodno vrijeme izrađujem vlastiti 'game engine'.",
+            description="U slobodno vrijeme izrađujem vlastiti pokretač video igara (C++).",
             status=Status.yellow,
         ),
         Entry(
             type=EntryType.project,
             title="Video igra (Online/Multiplayer/Server-Client)",
-            description="Izradio sam video igru (C++), koju igraju dva igrača, na dva računala, pomoću servera (Go).",
+            description="Izradio sam igru (C++) za dva igrača. Napisao sam server (Go) koji omogućuje igračima da razmjenjuju poteze putem interneta.",
             status=Status.green,
         ),
     ]
