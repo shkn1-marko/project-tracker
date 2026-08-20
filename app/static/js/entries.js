@@ -35,6 +35,7 @@ document.querySelectorAll('.entry').forEach(entry => {
                     a.rel = 'noopener';
                     a.className = 'entry-link';
                     a.innerHTML = `${label} ${externalLinkIcon}`;
+                    a.addEventListener('click', (e) => e.stopPropagation());
                     linksWrapper.appendChild(a);
                 });
 
