@@ -25,7 +25,7 @@ db.add_all(
             title="Web-stranica za praćenje projekata",
             description="Prilikom prijave za poslove suočio sam se sa jedinstvenim problemom. Kako potencijalnom poslodavcu najbolje prestaviti svoj portfolio. Došao sam na ideju da stvorim jedinstveni pogled koji spaja podatke koji se inače nalaze u mom životopisu, na GitHub-u i na web-stranicama mojih projekata. Podatci su podjeljeni u tri kategorije, stvari na kojima upravo radim, dugoročni ciljevi i popis završenih (zeleno) i projekata koji su u izradi (žuto).",
             github_url="https://github.com/shkn1-marko/project-tracker",
-            status=Status.yellow,
+            status=Status.green,
         ),
         Entry(
             type=EntryType.project,
