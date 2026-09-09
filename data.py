@@ -8,14 +8,9 @@ db.add_all(
     [
         Entry(
             type=EntryType.right_now,
-            title="Izrađujem igru 'Pong'",
-            description="Izrađujem UDP protokol za komunikaciju dvaju računala putem servera (VPS).",
-            github_url="https://github.com/shkn1-marko/pong",
-        ),
-        Entry(
-            type=EntryType.goal,
-            title="Go",
-            description="Želim ponovo raditi u Go programskom jeziku.",
+            title="Gradim osnovni program (Go)",
+            description="Trenutno pišem osnove programa koji će postati moj alat za administraciju servera. Radim na osnovnim naredbama (make, list, remove, start, stop).",
+            github_url="https://github.com/shkn1-marko/go-deploy",
         ),
         Entry(
             type=EntryType.goal,
@@ -24,8 +19,9 @@ db.add_all(
         ),
         Entry(
             type=EntryType.project,
-            title="CI/CD alat",
+            title="Alat za administraciju servera",
             description="Trenutno planiram izradu alata koji bi mi olakšao upravljanje serverom. Želio bih automatizirati ažuriranje i pokretanje projekata koji se nalaze na serveru. Alat planiram izraditi u programskom jeziku Go.",
+            github_url="https://github.com/shkn1-marko/go-deploy",
             status=Status.yellow,
         ),
         Entry(
@@ -33,7 +29,7 @@ db.add_all(
             title="Pong",
             description="U slobodno vrijeme izrađujem video igre. Pong je jednostavna igra pomoću koje želim naučiti više o programiranju u C++-u i OpenGL-u. Želim naučiti kako izrađivati veće sustave u C++-u. Također želim naučiti više o mrežnom programiranju i savladati korištenje mrežnog protokola UDP.",
             github_url="https://github.com/shkn1-marko/pong",
-            status=Status.yellow,
+            status=Status.green,
         ),
         Entry(
             type=EntryType.project,
