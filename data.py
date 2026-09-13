@@ -4,6 +4,9 @@ from app.models import Entry, EntryType, Status
 init_db()
 db = SessionLocal()
 
+db.query(Entry).delete()
+db.commit()
+
 db.add_all(
     [
         Entry(
