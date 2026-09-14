@@ -29,7 +29,7 @@ db.add_all(
         Entry(
             type=EntryType.project,
             title="C++ [Multiplayer] Pong",
-            description="Volim programirati u C++(u). Ovaj projekt izradio sam kao dokaz tehničkih sposobnosti. Projekt se sastoji od klijenta, servera i zajedničkog protokola za komunikaciju. Klijent koristi OpenGL za crtanje video igre. Komunikacija je ostvarena putem biblioteka operacijskog sustava: <winsock2.h> i <socket.h>. Server omogućuje igru na dva računala putem internetske mreže.",
+            description="Volim programirati u C++(u). Ovaj projekt izradio sam kao dokaz tehničkih sposobnosti. Projekt se sastoji od klijenta, servera i zajedničkog protokola za komunikaciju. Klijent koristi OpenGL za crtanje video igre. Komunikacija je ostvarena putem biblioteka operacijskog sustava: <winsock2.h> i <sys/socket.h>. Server omogućuje igru na dva računala putem internetske mreže.",
             github_url="https://github.com/shkn1-marko/pong",
             status=Status.green,
         ),
