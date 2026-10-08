@@ -120,7 +120,7 @@
         .section-label {
             font-size: 14px;
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 24px;
             margin-left: 6px;
             letter-spacing: 0.6px;
             text-transform: uppercase;
@@ -261,6 +261,10 @@
                 grid-template-columns: minmax(0, 1fr);
                 gap: 0;
             }
+
+            .projects-label {
+                margin-top: 40px;
+            }
         }
     </style>
 </head>
@@ -303,14 +307,14 @@
         možete otkriti klikom.
     </p>
 
-    <div class="section-label">Trenutno</div>
-    {% for entry in right_now %}
-        {{ entry_card(entry) }}
-    {% endfor %}
-
     <div class="columns">
 
         <div>
+            <div class="section-label">Trenutno</div>
+            {% for entry in right_now %}
+                {{ entry_card(entry) }}
+            {% endfor %}
+
             <div class="section-label spaced">Ciljevi</div>
             {% for entry in goals %}
                 {{ entry_card(entry) }}
@@ -318,7 +322,7 @@
         </div>
 
         <div>
-            <div class="section-label spaced">Projekti</div>
+            <div class="section-label projects-label">Projekti</div>
             {% for entry in projects %}
                 {{ entry_card(entry, show_status=True) }}
             {% endfor %}
