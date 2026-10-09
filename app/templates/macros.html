@@ -7,17 +7,21 @@
 {% endmacro %}
 
 {% macro entry_card(entry, show_status=False) %}
-<div class="entry"
-     data-description="{{ entry.description or '' }}"
-     data-github="{{ entry.github_url or '' }}"
-     data-youtube="{{ entry.youtube_url or '' }}"
-     data-webpage="{{ entry.webpage_url or '' }}">
+{% set links = [('GitHub', entry.github_url), ('YouTube', entry.youtube_url), ('Web', entry.webpage_url)] | selectattr(1) | list %}
+<div class="entry">
     <div class="entry-row">
         <span>{{ entry.title }}</span>
         {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}
     </div>
-    <div class="entry-details">
-        <div class="entry-details-inner"></div>
+    {% if links %}
+    <div class="entry-links">
+        {% for label, url in links %}
+        <a href="{{ url }}" target="_blank" rel="noopener" class="entry-link">{{ label }} {{ external_link_icon() }}</a>
+        {% endfor %}
     </div>
+    {% endif %}
+    {% if entry.description %}
+    <p class="entry-description">{{ entry.description }}</p>
+    {% endif %}
 </div>
 {% endmacro %}

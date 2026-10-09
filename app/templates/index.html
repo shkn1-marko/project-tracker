@@ -146,7 +146,6 @@
             font-size: 16px;
             font-weight: 500;
             color: #e6e6e6;
-            cursor: pointer;
             transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
             min-width: 0;
         }
@@ -157,32 +156,10 @@
             white-space: nowrap;
         }
 
-        .entry:hover {
-            border-color: #3d91d0;
-            box-shadow: 0 4px 20px rgba(0, 95, 184, 0.25);
-            transform: translateY(-1px);
-        }
-
         .entry-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .entry-details {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.25s ease;
-            overflow: hidden;
-        }
-
-        .entry-details.open {
-            grid-template-rows: 1fr;
-        }
-
-        .entry-details-inner {
-            min-height: 0;
-            overflow: hidden;
         }
 
         .entry-links {
@@ -303,8 +280,7 @@
         <span class="tag">O meni :</span><br>
         Ja sam Marko, prvostupnik inženjer računalne znanosti. Ovdje
         možete vidjeti projekte, ciljeve i zadatke na kojima trenutno
-        radim. Sve stavke sadrže kratak opis i vanjske poveznice koje
-        možete otkriti klikom.
+        radim. Sve stavke sadrže kratak opis i vanjske poveznice.
     </p>
 
     <div class="columns">
@@ -330,7 +306,5 @@
 
     </div>
 
-<template id="external-link-icon-template">{{ external_link_icon() }}</template>
-<script src="/static/js/entries.js"></script>
 </body>
 </html>
