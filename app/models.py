@@ -1,5 +1,4 @@
 import enum
-from datetime import datetime, timezone
 
 from sqlalchemy import Boolean, Column, DateTime, Enum, Integer, String
 from sqlalchemy.orm import declarative_base
@@ -34,4 +33,4 @@ class Entry(Base):
     youtube_url = Column(String, nullable=True)
     webpage_url = Column(String, nullable=True)
 
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    created_at = Column(DateTime, nullable=True)

@@ -8,7 +8,7 @@
 
 {% macro entry_card(entry, show_status=False) %}
 {% set links = [('GitHub', entry.github_url), ('YouTube', entry.youtube_url), ('Web', entry.webpage_url)] | selectattr(1) | list %}
-<div class="entry">
+<div class="entry" data-pinned="{{ 'true' if entry.pinned else 'false' }}" data-year="{{ entry.created_at.year if entry.created_at else '' }}">
     <div class="entry-row">
         <span>{{ entry.title }}</span>
         {% if show_status and entry.status %}<span class="dot {{ entry.status.value }}"></span>{% endif %}

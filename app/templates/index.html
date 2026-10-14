@@ -150,6 +150,10 @@
             min-width: 0;
         }
 
+        .entry[hidden] {
+            display: none;
+        }
+
         .entry span:first-child {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -188,6 +192,42 @@
             font-size: 14px;
             line-height: 1.7;
             color: #b8bcc2;
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin: -10px 0 14px 6px;
+        }
+
+        .filter {
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            color: #b8bcc2;
+            background: #181a1e;
+            border: 1px solid #2c3035;
+            border-radius: 5px;
+            padding: 5px 12px;
+            cursor: pointer;
+            transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+        }
+
+        .filter:hover {
+            border-color: #5ba7e8;
+            color: #e6e6e6;
+        }
+
+        .filter[aria-pressed="true"] {
+            background: #1769aa;
+            border-color: #1769aa;
+            color: #ffffff;
+        }
+
+        .filter-empty {
+            margin: 4px 6px;
+            font-size: 14px;
+            color: #8b9199;
         }
 
         .columns {
@@ -299,12 +339,20 @@
 
         <div>
             <div class="section-label projects-label">Projekti</div>
-            {% for entry in projects %}
-                {{ entry_card(entry, show_status=True) }}
-            {% endfor %}
+            <div class="filters">
+                <button type="button" class="filter" data-filter="pinned" aria-pressed="true">Istaknuto</button>
+                <button type="button" class="filter" data-filter="year" data-value="2026" aria-pressed="false">2026</button>
+            </div>
+            <div id="projects">
+                {% for entry in projects %}
+                    {{ entry_card(entry, show_status=True) }}
+                {% endfor %}
+                <p class="filter-empty" hidden>Nema projekata za odabrani filter.</p>
+            </div>
         </div>
 
     </div>
 
+    <script src="/static/js/project-filters.js"></script>
 </body>
 </html>

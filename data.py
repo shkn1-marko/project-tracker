@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from app.database import SessionLocal, init_db
 from app.models import Entry, EntryType, Status
 
@@ -25,6 +27,8 @@ db.add_all(
             title="Mobilna aplikacija : StatRep",
             description="StatRep je moja prva aplikacija za Android mobilne uređaje. Želio sam primati obavjesti o radu mog alata na serveru na mobilni uređaj. Kada go-deploy podigne projekt na serveru, obavijest o tome dolazi u aplikaciju. Ako podizanje nije uspjelo, obavijest sadrži podatke o pogrešci. Tijekom projekta naučio sam više o razvoju mobilnih aplikacija, te tehnologijama Firebase CM i Room.",
             github_url="https://github.com/shkn1-marko/status-report",
+            created_at=datetime(2026, 9, 17),
+            pinned=True,
             status=Status.green,
         ),
         Entry(
@@ -32,6 +36,8 @@ db.add_all(
             title="Alat za auto-deploy : go-deploy",
             description="Volim programirati u Go(u). Ovaj alat omogućuje automatsko podizanje mojih projekata koji se nalaze na serveru. Kada se dogodi promjena na mojem GitHub projektu, go-deploy prima poruku od GitHub(a), izvršava skripte za podizanje projekta i obavještava o uspjehu/neuspjehu putem mobilne aplikacije.",
             github_url="https://github.com/shkn1-marko/go-deploy",
+            created_at=datetime(2026, 9, 9),
+            pinned=True,
             status=Status.green,
         ),
         Entry(
@@ -39,6 +45,7 @@ db.add_all(
             title="C++ [Multiplayer] Pong",
             description="Volim programirati u C++(u). Ovaj projekt izradio sam kao dokaz tehničkih sposobnosti. Projekt se sastoji od klijenta, servera i zajedničkog protokola za komunikaciju. Klijent koristi OpenGL za crtanje video igre. Komunikacija je ostvarena putem biblioteka operacijskog sustava: <winsock2.h> i <sys/socket.h>. Server omogućuje igru na dva računala putem internetske mreže.",
             github_url="https://github.com/shkn1-marko/pong",
+            created_at=datetime(2026, 8, 28),
             status=Status.green,
         ),
         Entry(
@@ -46,6 +53,7 @@ db.add_all(
             title="Osobna web stranica",
             description="Ideja ove web stranice je izrada jednostavnog pregleda svih mojih projekata, ciljeva i trenutnih zadataka na jednom mjestu. Cilj ovog projekta je pojednostaviti upoznavanje s potencijalnim poslodavcima. Dodatno, želio sam priliku da izradim web stranicu, programiram u Python-u i izradim jednostavnu bazu podataka (SQLite).",
             github_url="https://github.com/shkn1-marko/project-tracker",
+            created_at=datetime(2026, 8, 14),
             status=Status.green,
         ),
     ]
