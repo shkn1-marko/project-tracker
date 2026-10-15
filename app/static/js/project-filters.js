@@ -29,12 +29,12 @@ function applyFilter(active) {
 
 filterButtons.forEach(button => {
     button.addEventListener('click', () => {
-        const wasActive = button.getAttribute('aria-pressed') === 'true';
+        if (button.getAttribute('aria-pressed') === 'true') return;
 
         filterButtons.forEach(b => b.setAttribute('aria-pressed', 'false'));
-        if (!wasActive) button.setAttribute('aria-pressed', 'true');
+        button.setAttribute('aria-pressed', 'true');
 
-        applyFilter(wasActive ? null : button);
+        applyFilter(button);
     });
 });
 
